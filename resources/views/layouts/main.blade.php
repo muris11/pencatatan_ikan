@@ -18,6 +18,13 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom background color -->
+    <style>
+        body, .content-wrapper {
+            background-color: rgb(142, 167, 195) !important;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -53,8 +60,7 @@
         <!-- /.content-wrapper -->
 
         <footer class="main-footer text-center">
-            <strong>Copyright &copy; 2025 <a href="#">Pencatatan Ikan</a>.</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2025 <a href="#">Pencatatan Ikan</a>.</strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->

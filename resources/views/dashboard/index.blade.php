@@ -1,9 +1,9 @@
 @extends('layouts.main')
-
 @section('header')
 <div class="row mb-2">
     <div class="col-sm-6">
-        <h1 class="m-0">Dashboard</h1>
+        <h1 class="m-0">Dashboard</i></h1>
+        
     </div>
 </div>
 @endsection
@@ -11,8 +11,8 @@
 @section('content')
 @php
     // Data konsumsi tahunan (2016–2023)
-    $labels = ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023','2024'];
-    $konsumsiTahunan = [46.04, 48.71, 50.84, 55.13, 57.28, 58.13, 58.5, 59.87, 60];
+    $labels = ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023','2024', '2025'];
+    $konsumsiTahunan = [46.04, 48.71, 50.84, 55.13, 57.28, 58.13, 58.5, 59.87, 60, 56];
 
     // Data konsumsi jenis ikan 2024 (dari data kedua)
     $jenisIkan = [
@@ -27,7 +27,8 @@
         'Mujair' => 1093,
         'Mas' => 690,
         'Nila' => 526,
-        'Lele' => 882
+        'Lele' => 882,
+        'Nila' => 600,
     ];
 @endphp
 

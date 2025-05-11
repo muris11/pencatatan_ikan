@@ -10,7 +10,7 @@ class KapalController extends Controller
 {
     public function index()
 {
-    if (Auth::user()->role === 'admin') {
+    if (Auth::user()->role === 'user') {
         // Admin lihat semua kapal, lengkap dengan user yang menambahkannya
         $kapals = Kapal::with('user')->get();
     } else {

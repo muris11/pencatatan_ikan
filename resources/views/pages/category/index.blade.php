@@ -8,7 +8,7 @@
 
 @section('content')
 <section class="intro">
-    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+    <div class="bg-image h-100" style="background-color: #8EA7C3;">
         <div class="mask d-flex align-items-center h-100">
             <div class="container">
                 <div class="row justify-content-center">

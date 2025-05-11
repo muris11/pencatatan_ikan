@@ -5,7 +5,7 @@
     <h1>Data Ikan</h1>
     <div class="col-10 text-right">
         <div class="card d-inline-block mt-1 p-2 shadow-sm" style="border-radius: 10px;">
-            <div style="font-size: 1.25rem; font-weight: 500;" class="text-muted m-0">
+            <div style="font-size: 1.25rem; font-weight: 500; font-family: 'Poppins', sans-serif;"  class="text-muted m-0">
                 {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
             </div>
         </div>
@@ -15,16 +15,18 @@
 
 @section('content')
 <section class="intro">
-    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+    <div class="bg-image h-100" style="background-color: #8EA7C3;">
         <div class="mask d-flex align-items-center h-100 ">
             <div class="container ">
                 <div class="row justify-content-center ">
                     <div class="col-12 ">
                         <div class="card ">
                             <div class="card-header d-flex justify-content-end">
+                                @if (auth()->user()->role !== 'user')
                                 <a href="{{ route('ikan.create') }}" class="btn btn-sm btn-primary">
                                     Tambah Ikan
                                 </a>
+                                @endif
                             </div>
                             <div class="card-body p-0 ">
                                 <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative;">
@@ -40,7 +42,9 @@
                                                 @if(Auth::user()->role === 'admin')
                                                     <th class="text-white">Ditambahkan oleh</th>
                                                 @endif
+                                                @if (auth()->user()->role !== 'user')
                                                 <th class="text-white">Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -55,6 +59,7 @@
                                                 @if(Auth::user()->role === 'admin')
                                                     <td>{{ $item->user->nama ?? '-' }}</td>
                                                 @endif
+                                                @if (auth()->user()->role !== 'user')
                                                 <td>
                                                     <div class="d-flex">
                                                         <a href="{{ route('ikan.edit', $item->id) }}" class="btn btn-warning btn-sm mr-1">
@@ -69,6 +74,7 @@
                                                         </form>
                                                     </div>
                                                 </td>
+                                                @endif
                                             </tr>
                                             @endforeach
                                         </tbody>

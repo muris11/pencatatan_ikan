@@ -12,7 +12,7 @@ class IkanController extends Controller
     public function index()
     {
         // Jika admin, tampilkan semua ikan, jika petugas, tampilkan ikan miliknya
-        if (Auth::user()->role === 'admin') {
+        if (Auth::user()->role === 'user') {
             $ikans = Ikan::with('kategori', 'user')->get();
         } else {
             $ikans = Ikan::with('kategori')->where('user_id', Auth::id())->get();

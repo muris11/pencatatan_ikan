@@ -18,7 +18,7 @@
     }
 @endphp
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4"
+<aside class="main-sidebar sidebar-light-primary elevation-4"
        style="position: fixed; top: 0; left: 0; height: 100vh; overflow: hidden; width: 250px; z-index: 1030;">
     
      <!-- Brand Logo -->
@@ -43,15 +43,15 @@
                 @endforeach
 
                 <!-- Logout -->
-                <li class="nav-item">
-                    <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin ingin logout?')">
-                        @csrf
-                        <button type="submit" class="nav-link btn btn-link text-left text-white w-100" style="padding-left: 1rem;">
-                            <i class="nav-icon fas fa-sign-out-alt"></i>
-                            <p>Logout</p>
-                        </button>
-                    </form>
-                </li>
+<li class="nav-item">
+    <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin ingin logout?')">
+        @csrf
+        <button type="submit" class="nav-link btn btn-link text-left text-danger w-100" style="padding-left: 1rem;">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p class="d-inline">Logout</p>
+        </button>
+    </form>
+</li>
             </ul>
         </nav>
     </div>
