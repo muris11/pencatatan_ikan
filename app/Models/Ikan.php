@@ -20,8 +20,10 @@ class Ikan extends Model
     'kategori_id',
     'harga_per_kg',
     'jumlah',
-    'user_id', // ← ini harus ada
+    'user_id',
+    'is_notified', // tambahkan ini
 ];
+
 
 
 

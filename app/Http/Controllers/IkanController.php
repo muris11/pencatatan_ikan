@@ -73,4 +73,28 @@ class IkanController extends Controller
         $ikan->delete();
         return redirect()->route('ikan.index')->with('success', 'Data ikan berhasil dihapus.');
     }
+    public function notify(Ikan $ikan)
+{
+    // Hapus validasi kepemilikan
+    // if (Auth::id() !== $ikan->user_id) {
+    //     abort(403);
+    // }
+
+    if ($ikan->jumlah > 500 && !$ikan->is_notified) {
+        $admins = \App\Models\User::where('role', 'admin')->get();
+
+        foreach ($admins as $admin) {
+            \App\Models\Notification::create([
+                'user_id' => $admin->id,
+                'message' => 'User "' . Auth::user()->nama . '" memberi notifikasi: ikan "' . $ikan->nama . '" melebihi 500KG (' . $ikan->jumlah . ' KG).',
+            ]);
+        }
+
+        $ikan->update(['is_notified' => true]);
+    }
+
+    return back()->with('success', 'Notifikasi berhasil dikirim ke admin.');
+}
+
+
 }
